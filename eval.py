@@ -31,7 +31,7 @@ class eval():
             pass
 
         # Data ready, train test spliting
-        self.X = df.drop(columns=['id', 'sii']).to_numpy()
+        self.X = df.drop(columns=['sii']).to_numpy()
         self.y = df['sii'].to_numpy()
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             self.X, self.y, test_size=0.2, random_state=seed)
