@@ -15,10 +15,10 @@ class eval():
     Use case:
     import eval
 
-    e = eval.eval(train_df_processed, '../eval/test6.txt', 42)
+    e = eval.eval(train_df_processed, '../eval/test6', 42)
     e.save()
 
-    # result be saved to ../eval/test6.txt
+    # result be saved to ../eval/test6
     '''
     def __init__(self, df, path='../eval/test', seed=42):
         self.seed = seed
