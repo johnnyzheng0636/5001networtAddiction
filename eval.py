@@ -4,6 +4,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import classification_report, cohen_kappa_score, make_scorer
+from sklearn import tree
+import matplotlib.pyplot as plt
 import xgboost as xgb
 import sys
 import os
@@ -18,20 +20,19 @@ class eval():
 
     # result be saved to ../eval/test6.txt
     '''
-    def __init__(self, df, path='../eval/test.txt', seed=42):
+    def __init__(self, df, path='../eval/test', seed=42):
         self.seed = seed
         self.path = path
 
-        self.head_tail = os.path.split(self.path)
-
         try:
-            os.makedirs(self.head_tail[0])
+            os.makedirs(self.path)
         except FileExistsError:
             # directory already exists
             pass
 
         # Data ready, train test spliting
         self.X = df.drop(columns=['sii']).to_numpy()
+        self.input_feature = df.drop(columns='sii').columns
         self.y = df['sii'].to_numpy()
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             self.X, self.y, test_size=0.2, random_state=seed)
@@ -94,7 +95,12 @@ class eval():
         out += 'Cross_val_score on Quadratic Weighted Kappa:\n' + str(cv_ls) + '\n Mean: ' + str(cv_ls.mean())
         out += '\n' + '='*50 + '\n' + '='*50 + '\n'
 
-        with open(self.path, 'w') as f:
+        with open(self.path + '/evaluation_score.txt', 'w') as f:
             f.write(out)
+
+        plt.figure(figsize=(30,12))
+        tree.plot_tree(clf1, filled=True, rounded=True, max_depth=3, fontsize=10, feature_names=self.input_feature)
+        plt.title("Decision tree trained on Feature")
+        plt.savefig(self.path + '/DT.png')
 
         print('ended, result at: ', self.path)                                                      
