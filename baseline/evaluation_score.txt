@@ -1,0 +1,113 @@
+Decision tree
+Training Quadratic Weighted Kappa: 1.0
+Training report:
+              precision    recall  f1-score   support
+
+        None       1.00      1.00      1.00      1258
+        Mild       1.00      1.00      1.00       599
+    Moderate       1.00      1.00      1.00       306
+      Severe       1.00      1.00      1.00        25
+
+    accuracy                           1.00      2188
+   macro avg       1.00      1.00      1.00      2188
+weighted avg       1.00      1.00      1.00      2188
+==================================================
+Testing Quadratic Weighted Kappa: 0.19949916527545908
+Testing report:
+              precision    recall  f1-score   support
+
+        None       0.68      0.62      0.65       336
+        Mild       0.23      0.31      0.26       131
+    Moderate       0.19      0.18      0.18        72
+      Severe       0.00      0.00      0.00         9
+
+    accuracy                           0.48       548
+   macro avg       0.28      0.28      0.28       548
+weighted avg       0.50      0.48      0.49       548
+==================================================
+Cross val mean report: 
+                    accuracy: 0.5065934065934066
+            macro average F1: 0.34749278085089114
+         weighted average F1: 0.5110400431812242
+    macro averaged precision: 0.3477860800009719
+ weighted averaged precision: 0.5172004511802377
+       macro averaged recall: 0.3504507143802772
+    weighted averaged recall: 0.5065934065934066
+    Quadratic Weighted Kappa: 0.257704571990617
+==================================================
+==================================================
+Random forest
+Training Quadratic Weighted Kappa: 1.0Training report:
+              precision    recall  f1-score   support
+
+        None       1.00      1.00      1.00      1258
+        Mild       1.00      1.00      1.00       599
+    Moderate       1.00      1.00      1.00       306
+      Severe       1.00      1.00      1.00        25
+
+    accuracy                           1.00      2188
+   macro avg       1.00      1.00      1.00      2188
+weighted avg       1.00      1.00      1.00      2188
+==================================================
+Testing Quadratic Weighted Kappa: 0.29433549961688
+Testing report:
+              precision    recall  f1-score   support
+
+        None       0.69      0.88      0.77       336
+        Mild       0.32      0.26      0.29       131
+    Moderate       0.36      0.07      0.12        72
+      Severe       0.00      0.00      0.00         9
+
+    accuracy                           0.61       548
+   macro avg       0.34      0.30      0.29       548
+weighted avg       0.55      0.61      0.56       548
+==================================================
+Cross val mean report: 
+                    accuracy: 0.6012352610892757
+            macro average F1: 0.3028561177242409
+         weighted average F1: 0.5457943110056263
+    macro averaged precision: 0.3376444823399224
+ weighted averaged precision: 0.5327909981911944
+       macro averaged recall: 0.3107454281563365
+    weighted averaged recall: 0.6012352610892757
+    Quadratic Weighted Kappa: 0.29823632932230837
+==================================================
+==================================================
+Extreme gradient boost for random forest
+Training Quadratic Weighted Kappa: 0.6260394662432403
+Training report:
+              precision    recall  f1-score   support
+
+        None       0.77      0.92      0.84      1258
+        Mild       0.68      0.57      0.62       599
+    Moderate       0.87      0.50      0.63       306
+      Severe       1.00      0.52      0.68        25
+
+    accuracy                           0.76      2188
+   macro avg       0.83      0.63      0.70      2188
+weighted avg       0.77      0.76      0.75      2188
+==================================================
+Testing Quadratic Weighted Kappa: 0.35798312398647725
+Testing report:
+              precision    recall  f1-score   support
+
+        None       0.72      0.87      0.79       336
+        Mild       0.32      0.29      0.30       131
+    Moderate       0.19      0.06      0.09        72
+      Severe       1.00      0.11      0.20         9
+
+    accuracy                           0.61       548
+   macro avg       0.56      0.33      0.34       548
+weighted avg       0.56      0.61      0.57       548
+==================================================
+Cross val mean report: 
+                    accuracy: 0.6096521483382796
+            macro average F1: 0.34683360726073986
+         weighted average F1: 0.5657833709150827
+    macro averaged precision: 0.4004046467989699
+ weighted averaged precision: 0.5566715993151939
+       macro averaged recall: 0.34186807220108995
+    weighted averaged recall: 0.6096521483382796
+    Quadratic Weighted Kappa: 0.3608802102639194
+==================================================
+==================================================
